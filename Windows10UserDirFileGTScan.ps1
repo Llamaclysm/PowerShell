@@ -14,3 +14,4 @@ $P = "$D$U"
 #echo "Path to scan: $P"
 
 Get-ChildItem -Path $P -Recurse | Where-Object {$_.Length -gt $S}
+#Get-ChildItem -Path $P -Recurse | Where-Object {$_.Length -gt $S} | Measure-Object
