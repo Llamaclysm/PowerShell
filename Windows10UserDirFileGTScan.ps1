@@ -15,4 +15,4 @@ $P = "$D$U"
 echo "Scanning for files greater than $S in a directory: $P"
 
 Get-ChildItem -Path $P -Recurse | Where-Object {$_.Length -gt $S}
-#Get-ChildItem -Path $P -Recurse | Where-Object {$_.Length -gt $S} | Measure-Object
+#Get-ChildItem -Path $P -Recurse | Where-Object {$_.Length -gt $S} | Measure-Object -Property length -Minimum -Maximum -Average
