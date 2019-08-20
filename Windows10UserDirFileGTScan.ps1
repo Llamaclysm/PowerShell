@@ -11,7 +11,8 @@ echo "Select a user: "
 $U = Read-Host 
 $D = "C:\Users\"
 $P = "$D$U"
-#echo "Debug only: Path to scan: $P"
+#debug section only - just ignore
+#echo "Path to scan: $P"
 echo "Scanning for files greater than $S in a directory: $P"
 
 Get-ChildItem -Path $P -Recurse | Where-Object {$_.Length -gt $S}
