@@ -35,7 +35,11 @@ Write-Host "Scanning for files greater than $S in a directory: $P"
 # MAGIC
 $LargeFiles = Get-ChildItem -Path $P -Recurse | Where-Object {$_.Length -gt $S} 
 $LargeFilesCount = $LargeFiles | Measure-Object | Select-Object -ExpandProperty Count
-foreach ($i in $LargeFiles) {
-    Write-Host "$i"
+foreach ($item in $LargeFiles) {
+    Write-Host "$item"
 }
-Write-Host "$LargeFilesCount files greater than $S total."
+[Int64]$totalSize = 0
+foreach ($file in $LargeFiles) {
+    $totalSize += $file.Length
+}
+Write-Host "$LargeFilesCount files greater than $S , with a total size of $($totalSize /1GB) GB"
