@@ -1,5 +1,5 @@
 <#
-A simple script to list files within a user directory with size greater than X
+A simple script to list files within a given directory with size greater than X
 #>
 
 
@@ -22,4 +22,4 @@ $LargeFilesCount = $LargeFiles | Measure-Object | Select-Object -ExpandProperty 
 foreach ($i in $LargeFiles) {
     Write-Host "$i"
 }
-Write-Host "W sumie $LargeFilesCount plikow"
+Write-Host "$LargeFilesCount files total."
