@@ -38,4 +38,4 @@ $LargeFilesCount = $LargeFiles | Measure-Object | Select-Object -ExpandProperty 
 foreach ($i in $LargeFiles) {
     Write-Host "$i"
 }
-Write-Host "$LargeFilesCount files total."
+Write-Host "$LargeFilesCount files greater than $S total."
