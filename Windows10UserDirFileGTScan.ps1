@@ -12,24 +12,21 @@ Write-Host "3 - With fully customized directory"
 if($MenuItem -eq 1){
     Write-Host "Scanning with static HOME directory: $HOME"
     $P = $HOME
-    $S = Read-Host -Prompt 'Pick a size to search for (greater than ; in MB)'
 }
 elseif($MenuItem -eq 2){
     Write-Host "Scanning with customized HOME directory"
     $U = Read-Host -Prompt 'Select a username'
-    $D = "C:\Users\"
-    $P = "$D$U"
-    $S = Read-Host -Prompt 'Pick a size to search for (greater than ; in MB)'
+    $P = "C:\Users\$U"
 }
 elseif($MenuItem -eq 3){
     Write-Host "Scanning with fully customized directory"
     $P = Read-Host -Prompt 'Select a path to scan'
-    $S = Read-Host -Prompt 'Pick a size to search for (greater than ; in MB)'
 }
 else {
     Write-Host "Wrong selection"
 }
 
+$S = Read-Host -Prompt 'Pick a size to search for (greater than ; in MB ; eg. 500MB)'
 Write-Host "Scanning for files greater than $S in a directory: $P"
 
 # MAGIC
