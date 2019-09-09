@@ -44,5 +44,6 @@ $bloatware = @(
 )
 
 foreach ($bloat in $bloatware) {
+    Write-Host "$bloat"
     Get-AppxPackage -allusers $bloat | Remove-AppxPackage -allusers
 }
