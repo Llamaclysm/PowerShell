@@ -24,5 +24,5 @@ echo "Local System New Name : $pc$s"
 # already in AD 
 Rename-Computer -NewName "$pc$s"
 
-# NOT in AD 
-#Rename-Computer -NewName "$pc$s" -LocalCredential WS\Administrator -PassThru
+# 
+add-computer –domainname "PutYourDomainNameHere"  -restart
